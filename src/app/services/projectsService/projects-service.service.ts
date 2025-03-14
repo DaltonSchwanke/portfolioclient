@@ -6,4 +6,8 @@ import { Injectable } from '@angular/core';
 export class ProjectsServiceService {
 
   constructor() { }
+
+  getProjects(): void {
+    console.log("Projects Service: getting projects data");
+  }
 }

@@ -6,4 +6,8 @@ import { Injectable } from '@angular/core';
 export class BlogsServiceService {
 
   constructor() { }
+
+  getBlogs(): void {
+    console.log("Blogs Service: getting blogs data");
+  }
 }

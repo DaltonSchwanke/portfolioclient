@@ -1,0 +1,14 @@
+#homeContainer{
+    display: flex;
+    flex-direction: row;
+}
+
+#homeLeft{
+    width: 50%;
+    min-height: 100vh;
+}
+
+#homeRight{
+    width: 50%;
+    min-height: 100vh;
+}

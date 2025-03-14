@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BlogsServiceService } from '../../services/blogsService/blogs-service.service';
 
 @Component({
   selector: 'app-blogs',
@@ -8,5 +9,9 @@ import { Component } from '@angular/core';
   styleUrl: './blogs.component.css'
 })
 export class BlogsComponent {
+
+  constructor( private blogsService: BlogsServiceService) {
+    this.blogsService.getBlogs();
+  }
 
 }
