@@ -10,9 +10,20 @@ import { HomeServiceService } from '../../services/homeService/home-service.serv
   styleUrl: './featured-projects.component.css'
 })
 export class FeaturedProjectsComponent {
+  featuredProjects: any;
 
-  constructor( private router: Router, private homeService: HomeServiceService) {
-    this.homeService.getFeaturedProjects();
+  constructor( private router: Router, private homeService: HomeServiceService) {}
+
+  ngOnInit(): void {
+    this.homeService.getFeaturedProjects().subscribe({
+      next: (data) => {
+        this.featuredProjects = data;
+        console.log("Featured Projects:", this.featuredProjects);
+      },
+      error: (err) => {
+        console.error("Error fetching featured projects data", err);
+      }
+    })
   }
 
 

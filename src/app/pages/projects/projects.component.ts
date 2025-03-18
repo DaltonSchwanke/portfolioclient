@@ -9,9 +9,20 @@ import { ProjectsServiceService } from '../../services/projectsService/projects-
   styleUrl: './projects.component.css'
 })
 export class ProjectsComponent {
+  projects: any;
 
-  constructor( private projectsService: ProjectsServiceService) {
-    this.projectsService.getProjects();
+  constructor( private projectsService: ProjectsServiceService) {}
+
+  ngOnInit(): void {
+    this.projectsService.getProjects().subscribe({
+      next: (data) => {
+        this.projects = data;
+        console.log("Projects:", this.projects) ;
+      },
+      error: (err) => {
+        console.error("Error fetching project data", err);
+      }
+    })
   }
 
 }

@@ -9,9 +9,20 @@ import { HomeServiceService } from '../../services/homeService/home-service.serv
   styleUrl: './experience.component.css'
 })
 export class ExperienceComponent {
+  experienceData: any;
 
-  constructor( private homeService: HomeServiceService) {
-    this.homeService.getExperience();
+  constructor( private homeService: HomeServiceService) {}
+
+  ngOnInit(): void {
+    this.homeService.getExperience().subscribe({
+      next: (data) => {
+        this.experienceData = data;
+        console.log("Experience Data:", this.experienceData);
+      },
+      error: (err) => {
+        console.error("Error fetching experience data:", err);
+      }
+    });
   }
 
 }

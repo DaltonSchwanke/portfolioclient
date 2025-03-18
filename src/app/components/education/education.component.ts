@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HomeServiceService } from '../../services/homeService/home-service.service';
 
 @Component({
@@ -9,9 +9,20 @@ import { HomeServiceService } from '../../services/homeService/home-service.serv
   styleUrl: './education.component.css'
 })
 export class EducationComponent {
+  educationData: any;
 
-  constructor( private homeService: HomeServiceService) {
-    this.homeService.getEducation();
+  constructor( private homeService: HomeServiceService) {}
+
+  ngOnInit(): void {
+    this.homeService.getEducation().subscribe({
+      next: (data) => {
+        this.educationData = data;
+        console.log("Education Data:", this.educationData);
+      },
+      error: (err) => {
+        console.error("Error fetching education data:", err);
+      }
+    });
   }
 
 }

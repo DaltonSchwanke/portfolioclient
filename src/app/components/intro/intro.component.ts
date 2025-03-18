@@ -9,9 +9,20 @@ import { HomeServiceService } from '../../services/homeService/home-service.serv
   styleUrl: './intro.component.css'
 })
 export class IntroComponent {
+  introData: any;
 
-  constructor( private homeService: HomeServiceService) {
-    this.homeService.getIntro();
+  constructor( private homeService: HomeServiceService) {}
+
+  ngOnInit(): void {
+    this.homeService.getIntro().subscribe({
+      next: (data) => {
+        this.introData = data;
+        console.log("Intro Data:", this.introData);
+      },
+      error: (err) => {
+        console.error("Error fetching intro data:", err);
+      }
+    });
   }
 
 }

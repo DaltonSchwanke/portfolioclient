@@ -9,9 +9,20 @@ import { HomeServiceService } from '../../services/homeService/home-service.serv
   styleUrl: './sidebar.component.css'
 })
 export class SidebarComponent {
+  sidebarData: any;
 
-  constructor( private homeService: HomeServiceService) {
-    this.homeService.getSideBar();
+  constructor( private homeService: HomeServiceService) {}
+
+  ngOnInit(): void {
+    this.homeService.getSideBar().subscribe({
+      next: (data) => {
+        this.sidebarData = data;
+        console.log("Sidebar Data:", this.sidebarData);
+      },
+      error: (err) => {
+        console.error("Error fetching sidebar data", err);
+      }
+    })
   }
 
 }

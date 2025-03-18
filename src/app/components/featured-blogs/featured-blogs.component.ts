@@ -10,9 +10,21 @@ import { HomeServiceService } from '../../services/homeService/home-service.serv
   styleUrl: './featured-blogs.component.css'
 })
 export class FeaturedBlogsComponent {
+  featuredBlogs: any;
+  
+  constructor( private router: Router, private homeService: HomeServiceService) {}
 
-  constructor( private router: Router, private homeService: HomeServiceService) {
-    this.homeService.getFeaturedBlgos();
+  ngOnInit(): void {
+    this.homeService.getFeaturedBlogs().subscribe({
+      next: (data) => {
+        this.featuredBlogs = data;
+        console.log("Featured Blogs:", this.featuredBlogs);
+      },
+      error: (err) => {
+        this.router.navigate(['']);
+        console.log("Error fetching featured blogs", err);
+      }
+    })
   }
 
   goToBlogs(): void {
