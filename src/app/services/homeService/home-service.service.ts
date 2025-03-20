@@ -48,13 +48,15 @@ export class HomeServiceService {
 
 
   /**
-   *  This function is used to send a request to get featured projects data
+   *  This function is used to send a request to get featured projects data.
+   *  For now this request is blocked off because it might be cut for reconstruction
    * 
    * @returns Featured Projects Data
-   */
+   *
   getFeaturedProjects(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/featured-project`, { headers: this.getHeaders() });
   }
+  */
 
 
   /**
@@ -78,13 +80,15 @@ export class HomeServiceService {
 
 
   /**
-   *  This function is used to send a request to get featured blogs data 
+   *  This function is used to send a request to get featured blogs data. 
+   *  For now this request is blocked off because it might be cut for reconstruction
    * 
    * @returns Featured Blogs Data
-   */
+   *
   getFeaturedBlogs(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/featured-blog`, { headers: this.getHeaders() });
   }
+  */
 
 
   /**

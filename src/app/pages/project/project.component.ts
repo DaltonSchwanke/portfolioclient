@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ProjectsServiceService } from '../../services/projectsService/projects-service.service';
 
 @Component({
   selector: 'app-project',
@@ -8,5 +10,26 @@ import { Component } from '@angular/core';
   styleUrl: './project.component.css'
 })
 export class ProjectComponent {
+  project: any;
+  errorMessage: string = '';
+
+  constructor(private projectsService: ProjectsServiceService, private route: ActivatedRoute) {}
+
+  ngOnInit(): void {
+    const projectSlug: string | null = this.route.snapshot.paramMap.get('slug');
+    if (projectSlug) {
+      this.projectsService.getProjectBySlug(projectSlug).subscribe({
+        next: (data) => {
+          this.project = data;
+          console.log("Project:", this.project);
+        },
+        error: (err) => {
+          console.error("Error fetching project details", err);
+        }
+      });
+    } else {
+      this.errorMessage = "Oops looks like there was an error getting this project's information";
+    }
+  }
 
 }

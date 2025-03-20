@@ -1,1 +1,10 @@
-<p>projects works!</p>
+<div id="projectsPage">
+    <div id="projectsPageHeaderContainer">
+        <h2>Projects</h2>
+    </div>
+    <div id="projectCardsContainer">
+        <button *ngFor="let project of projects?.data" class="projectCard" (click)="goToProject(project.slug)">
+            <h2>{{ project.title }}</h2>
+        </button>
+    </div>
+</div>

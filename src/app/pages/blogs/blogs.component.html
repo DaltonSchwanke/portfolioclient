@@ -1,1 +1,12 @@
-<p>blogs works!</p>
+<div id="blogsPage">
+    <div id="blogsHeaderContainer">
+        Blogs
+    </div>
+    <div id="blogsCardContainer">
+        <div *ngFor="let blog of blogs?.data" class="blogContainer">
+            <button class="blogTitleContainer" (click)="goToBlog(blog.slug)">
+                <h2>{{ blog.title }}</h2>
+            </button>
+        </div>
+    </div>
+</div>

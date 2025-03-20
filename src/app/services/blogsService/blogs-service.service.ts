@@ -13,6 +13,7 @@ export class BlogsServiceService {
 
   constructor(private http: HttpClient) { }
 
+
   /**
   * The function below is used to get the header for the API 
   * request and is used in the following methods used to retrieve data from
@@ -36,7 +37,15 @@ export class BlogsServiceService {
     return this.http.get<any>(`${this.apiUrl}/blogs`, { headers: this.getHeaders() });
   }
 
-  getBlog(): void{
-    console.log("This is where the request will be sent for a particular blog post");
+
+  /**
+   *  This function is used to send a request to get blog data
+   * 
+   * @param id Takes in blog ID
+   * @returns  Blog Data related to blog ID
+   */
+  getBlogBySlug(slug: string): Observable<any> {
+    const url = `${this.apiUrl}/blogs?filters[slug][$eq]=${slug}`;
+    return this.http.get<any>(url);
   }
 }

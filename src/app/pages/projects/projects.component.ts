@@ -1,18 +1,25 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 import { ProjectsServiceService } from '../../services/projectsService/projects-service.service';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.css'
 })
 export class ProjectsComponent {
   projects: any;
 
-  constructor( private projectsService: ProjectsServiceService) {}
+  constructor( private projectsService: ProjectsServiceService, private router: Router) {}
 
+  /**
+   *  This function is ran when the projects component is loaded and will
+   *  call the project service and get project data and return it and set it to the
+   *  variable 'projectData'
+   */
   ngOnInit(): void {
     this.projectsService.getProjects().subscribe({
       next: (data) => {
@@ -23,6 +30,17 @@ export class ProjectsComponent {
         console.error("Error fetching project data", err);
       }
     })
+  }
+
+
+  /**
+   *  This function is used to route the user to the project page
+   *  pertaining to the project slug that is passed as a parameter.
+   * 
+   * @param slug project slug id
+   */
+  goToProject(slug: string): void{
+    this.router.navigate(['/project', slug]);
   }
 
 }

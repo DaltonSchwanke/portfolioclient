@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, Observer } from 'rxjs';
 import { environment } from '../../../environments/environments';
 
 @Injectable({
@@ -26,12 +26,25 @@ export class ProjectsServiceService {
     });
   }
 
+
   /**
-   *  This function senda a request to get projects data
+   *  This function sends a request to get projects data
    * 
    * @returns Projects Data 
    */
   getProjects(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/projects`, { headers: this.getHeaders() });
+  }
+
+
+  /**
+   *  This function sends a request to get project data
+   * 
+   * @param id Project ID
+   * @returns Project data related to project ID
+   */
+  getProjectBySlug(slug: string): Observable<any> {
+    const url = `${this.apiUrl}/projects?filters[slug][$eq]=${slug}`;
+    return this.http.get<any>(url);
   }
 }

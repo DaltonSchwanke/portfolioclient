@@ -1,6 +1,10 @@
 #homeContainer{
     display: flex;
     flex-direction: row;
+    background-color: rgb(20, 20, 33);
+    margin: 0px !important;
+    padding: 2rem 8rem;
+    margin-top: 0rem !important;
 }
 
 #homeLeft{
