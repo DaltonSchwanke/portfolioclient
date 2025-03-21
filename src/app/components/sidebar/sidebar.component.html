@@ -1,1 +1,22 @@
-<p>sidebar works!</p>
+<div id="sidebarContainer">
+    <div id="sidebarImageContainer">
+        <img id="sidebarImage" [src]="sidebarData?.data?.image?.url" alt="image of me">
+    </div>
+    <div id="sidebarNameContainer">
+        <h1>{{ sidebarData?.data?.name}}</h1>
+    </div>
+    <div id="sidebarLinksContainer">
+        <div id="linkedInContainer">
+            <a [href]="sidebarData?.data?.linkedin" target="_blank">linkedin</a>
+        </div>
+        <div id="githubContainer">
+            <a [href]="sidebarData?.data?.github" target="_blank">github</a>
+        </div>
+        <div id="emailContainer">
+            <a href="sidebarData?.data?.email" target="_blank">email</a>
+        </div>
+        <div id="resumeContainer">
+            <a href="sidebarData?.data?.resume" target="_blank">resume</a>
+        </div>
+    </div>
+</div>

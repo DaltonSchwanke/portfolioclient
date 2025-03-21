@@ -23,7 +23,7 @@ export class BlogComponent {
       this.blogService.getBlogBySlug(blogSlug).subscribe({
         next: (data) => {
           if (data.data && data.data.length > 0) {
-            this.blog = data.data[0]; // Extract the first (and only) blog object
+            this.blog = data.data[0];
           } else {
             this.errorMessage = "Blog not found.";
           }

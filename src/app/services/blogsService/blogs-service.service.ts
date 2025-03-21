@@ -34,18 +34,17 @@ export class BlogsServiceService {
    * @returns Blogs Data
    */
   getBlogs(): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/blogs`, { headers: this.getHeaders() });
+    return this.http.get<any>(`${this.apiUrl}/blogs?populate=image`, { headers: this.getHeaders() });
   }
-
-
+  
   /**
    *  This function is used to send a request to get blog data
    * 
-   * @param id Takes in blog ID
-   * @returns  Blog Data related to blog ID
+   * @param slug Takes in blog slug
+   * @returns  Blog Data related to blog slug, including the image field
    */
   getBlogBySlug(slug: string): Observable<any> {
-    const url = `${this.apiUrl}/blogs?filters[slug][$eq]=${slug}`;
+    const url = `${this.apiUrl}/blogs?filters[slug][$eq]=${slug}&populate=image`;
     return this.http.get<any>(url);
   }
 }

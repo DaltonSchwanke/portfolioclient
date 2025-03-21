@@ -18,8 +18,12 @@ export class FeaturedProjectsComponent {
   ngOnInit(): void {
     this.projectsService.getProjects().subscribe({
       next: (data) => {
-        this.projects = data;
-        console.log("Projects:", this.projects);
+        if(data.data.length > 3){
+          this.projects = data.data.slice(0,3);
+        }
+        else{
+          this.projects = data.data;
+        }
       },
       error: (err) => {
         console.error("Error fetching projects data", err);
@@ -44,9 +48,10 @@ export class FeaturedProjectsComponent {
    *  this method is currently commented out because the route to this page
    *  is turned off due to reconstruction. 
    *
+   *   
+   */
   goToProjects(): void {
     this.router.navigate(['/projects']);
   }
-    */
 
 }

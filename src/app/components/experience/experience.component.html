@@ -1,3 +1,19 @@
 <div id="experienceContainer">
-    <p>experience works!</p>
+    <div id="experienceHeaderContainer">
+        <h1>Experience</h1>
+    </div>
+    <div id="experienceCardContainer">
+        <div *ngFor="let exp of experienceData?.data" class="experienceCard">
+            <a class="expButton" [href]="exp.link" target="_blank">view</a>
+            <div class="expCompanyPosition">
+                <h2>{{ exp.company }} - {{ exp.position }}</h2>
+            </div>
+            <div class="expStartEnd">
+                <h4>{{ exp.startDate }} - {{ exp.endDate }}</h4>
+            </div>
+            <div class="expDescription">
+                <p>{{ exp.description }}</p>
+            </div>
+        </div>
+    </div>
 </div>

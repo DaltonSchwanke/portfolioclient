@@ -1,3 +1,21 @@
 <div id="featuredBlogsContainer">
-    <p>This is where the blogs will go</p>
+    <div id="blogsHeaderContainer">
+        Blogs
+    </div>
+    <div id="blogsCardContainer">
+        <button *ngFor="let blog of blogs" class="blogCard" (click)="goToBlog(blog?.slug)">
+            <div class="blogTitleContainer">
+                {{ blog.title }}
+            </div>
+            <div class="blogDateContainer">
+                {{ blog.date }}
+            </div>
+            <div class="blogSummaryContainer">
+                <p>{{ blog.summary }}</p>
+            </div>
+        </button>
+    </div>
+    <div id="blogsBtnContainer">
+        <button id="blogsBtn" (click)="goToBlogs()">more</button>
+    </div>
 </div>

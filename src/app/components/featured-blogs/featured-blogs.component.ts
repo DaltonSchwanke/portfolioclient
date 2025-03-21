@@ -23,14 +23,21 @@ export class FeaturedBlogsComponent {
   ngOnInit(): void {
     this.blogsService.getBlogs().subscribe({
       next: (data) => {
-        this.blogs = data;
-        console.log("Blogs:", this.blogs);
+        if(data.data.length > 3){
+          this.blogs = data.data.slice(0, 3);
+        }
+        else{
+          this.blogs = data.data;
+        }
       },
       error: (err) => {
         console.log("Error fetching featured blogs", err);
       }
     });
 }
+
+
+
 
   /**
    *  This function is used to navigate the user to the blog page pertaining
@@ -48,9 +55,9 @@ export class FeaturedBlogsComponent {
  * for now this is commented out because it might be 
  * cut from the site. 
  * 
+ */
   goToBlogs(): void {
     this.router.navigate(['/blogs']);
   }
-*/
 
 }
