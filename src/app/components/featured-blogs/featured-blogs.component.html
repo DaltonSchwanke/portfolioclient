@@ -1,14 +1,14 @@
 <div id="featuredBlogsContainer">
     <div id="blogsHeaderContainer">
-        Blogs
+        <h1>Blogs</h1>
     </div>
     <div id="blogsCardContainer">
         <button *ngFor="let blog of blogs" class="blogCard" (click)="goToBlog(blog?.slug)">
             <div class="blogTitleContainer">
-                {{ blog.title }}
+                <h2>{{ blog.title }}</h2>
             </div>
             <div class="blogDateContainer">
-                {{ blog.date }}
+                <h3>{{ blog.date }}</h3>
             </div>
             <div class="blogSummaryContainer">
                 <p>{{ blog.summary }}</p>

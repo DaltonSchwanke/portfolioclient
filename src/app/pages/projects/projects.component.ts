@@ -42,5 +42,4 @@ export class ProjectsComponent {
   goToProject(slug: string): void{
     this.router.navigate(['/project', slug]);
   }
-
 }

@@ -1,18 +1,42 @@
 #homeContainer{
     display: flex;
     flex-direction: row;
-    background-color: rgb(20, 20, 33);
     margin: 0px !important;
+    background-color: inherit;
     padding: 2rem 8rem;
     margin-top: 0rem !important;
 }
 
-#homeLeft{
-    width: 50%;
-    min-height: 100vh;
+#homeLeft {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    width: 40%;
+    min-height: 80vh;
+    max-height: 80vh;
+    padding: 2rem;
 }
 
 #homeRight{
-    width: 50%;
+    padding: 2rem;
+    width: 60%;
     min-height: 100vh;
+}
+
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+    #homeContainer {
+        flex-direction: column;
+        padding: 2rem; /* Optional: reduce padding for mobile */
+    }
+    
+    #homeLeft {
+        width: 100%;
+    }
+
+    #homeRight{
+        width: 100%;
+    }
 }

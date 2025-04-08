@@ -33,7 +33,7 @@ export class HomeServiceService {
    * @returns Sidebar Data
    */
   getSideBar(): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/sidebar?populate=image`, { headers: this.getHeaders() });
+    return this.http.get<any>(`${this.apiUrl}/sidebar?populate=resume`, { headers: this.getHeaders() });
   }
 
 

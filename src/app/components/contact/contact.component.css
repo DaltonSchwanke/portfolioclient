@@ -4,6 +4,8 @@
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+    background-color: rgba(256, 256, 256, 0.05);
+    border-radius: 16px;
 }
 
 /* Header Container */
@@ -26,11 +28,22 @@
     gap: 10px; /* Spacing between form fields */
 }
 
-/* Email and Title input containers */
-#emailInputContainer, 
-#titleInputContainer {
-    width: 48%; /* Each takes about half of the parent's width */
+#emailTitleContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly; /* This handles X-axis spacing */
+    align-items: center;           /* Optional: vertically center items */
 }
+
+#emailInputContainer{
+    width: 48%;
+}
+
+#titleInputContainer{
+    width: 40%;
+}
+
 
 #messageInputContainer {
     width: 100%; /* Full width */

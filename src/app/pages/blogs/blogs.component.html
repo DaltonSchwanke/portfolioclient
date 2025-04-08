@@ -1,11 +1,19 @@
 <div id="blogsPage">
     <div id="blogsHeaderContainer">
-        Blogs
+        <h1>Blogs</h1>
     </div>
     <div id="blogsCardContainer">
         <div *ngFor="let blog of blogs?.data" class="blogContainer">
             <button class="blogTitleContainer" (click)="goToBlog(blog.slug)">
-                <h2>{{ blog.title }}</h2>
+                <div class="blogHeaderContainer">
+                    <h2>{{ blog?.title }}</h2>
+                </div>
+                <div class="blogDate">
+                    <h3>{{ blog?.date }}</h3>
+                </div>
+                <div class="blogSummaryContainer">
+                    <p>{{ blog?.summary }}</p>
+                </div>
             </button>
         </div>
     </div>

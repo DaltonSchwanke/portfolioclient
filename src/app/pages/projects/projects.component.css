@@ -1,0 +1,33 @@
+#projectsPage {
+    margin: 0px;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+#projectCardsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.projectCard {
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.projectCard:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.projectLinks {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}

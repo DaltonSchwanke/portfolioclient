@@ -1,9 +1,30 @@
 #projectsContainer{
-    background-color: white;
-    margin: 2rem;
+    background-color: rgba(256, 256, 256, 0.05);
     display: flex;
     flex-direction: row;
-    padding: 0.5rem;
     border-radius: 8px;
     min-height: 40vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#projectsHeaderContainer{
+    width: 100%;
+}
+
+#projectsCardContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#projectsBtnContainer{
+    width: 100%;
+}
+
+.projectCard{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
 }

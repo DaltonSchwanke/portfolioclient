@@ -3,20 +3,28 @@
         <img id="sidebarImage" [src]="sidebarData?.data?.image?.url" alt="image of me">
     </div>
     <div id="sidebarNameContainer">
-        <h1>{{ sidebarData?.data?.name}}</h1>
+        <h1 class="outfit-header">{{ sidebarData?.data?.name}}</h1>
     </div>
     <div id="sidebarLinksContainer">
         <div id="linkedInContainer">
-            <a [href]="sidebarData?.data?.linkedin" target="_blank">linkedin</a>
+            <a [href]="sidebarData?.data?.linkedin" target="_blank">
+                <img class="icon" src="/linkedin.png" alt="LinkedIn">
+            </a>
         </div>
         <div id="githubContainer">
-            <a [href]="sidebarData?.data?.github" target="_blank">github</a>
+            <a [href]="sidebarData?.data?.github" target="_blank">
+                <img class="icon" src="/github.png" alt="Github">
+            </a>
         </div>
         <div id="emailContainer">
-            <a href="sidebarData?.data?.email" target="_blank">email</a>
+            <a href="sidebarData?.data?.email" target="_blank">
+                <img class="icon" src="/envelope.png" alt="Email">
+            </a>
         </div>
         <div id="resumeContainer">
-            <a href="sidebarData?.data?.resume" target="_blank">resume</a>
+            <a (click)="openResume($event)" href="#">
+                <img class="icon" src="/resume.png" alt="Resume">
+            </a>
         </div>
     </div>
 </div>

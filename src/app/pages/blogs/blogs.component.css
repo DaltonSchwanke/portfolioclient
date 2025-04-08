@@ -1,3 +1,31 @@
 #blogsPage{
-    padding: 2rem 4rem;
+    padding: 0px;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+#blogsCardContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.blogContainer {
+    width: 100%;
+}
+
+.blogTitleContainer {
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.blogTitleContainer:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }

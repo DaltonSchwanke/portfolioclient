@@ -25,4 +25,13 @@ export class SidebarComponent {
     })
   }
 
+  openResume(event: Event): void {
+    event.preventDefault();
+    console.log("function ran");
+    const resumeUrl = this.sidebarData?.data?.resume[0]?.url;
+    if (resumeUrl) {
+      window.open(resumeUrl, '_blank', 'noopener,noreferrer');
+    }
+  }
+
 }
