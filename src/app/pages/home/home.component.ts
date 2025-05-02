@@ -10,6 +10,8 @@ import { ContactComponent } from '../../components/contact/contact.component';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { BlogsComponent } from '../blogs/blogs.component';
 import { ProjectsComponent } from '../projects/projects.component';
+import { ProjectComponent } from '../project/project.component';
+import { BlogComponent } from '../blog/blog.component';
 
 @Component({
   selector: 'app-home',
@@ -25,16 +27,37 @@ import { ProjectsComponent } from '../projects/projects.component';
     ContactComponent,
     NavbarComponent,
     BlogsComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    ProjectComponent,
+    BlogComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
   activeSection: string = 'home';
+  selectedProjectSlug: string | null = null;
+  selectedBlogSlug: string | null = null;
 
   onSectionChange(section: string): void {
     this.activeSection = section;
   }
 
+  showProject(slug: string): void {
+    this.selectedProjectSlug = slug;
+    this.activeSection = 'projectDetail';
+  }
+
+  showBlog(slug: string): void {
+    this.selectedBlogSlug = slug;
+    this.activeSection = 'blogDetail';
+  }
+
+  goToProjects(){
+    this.activeSection = "projects";
+  }
+
+  goToBlogs(){
+    this.activeSection = "blogs";
+  }
 }

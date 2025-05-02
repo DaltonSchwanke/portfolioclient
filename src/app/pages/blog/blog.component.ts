@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { BlogsServiceService } from '../../services/blogsService/blogs-service.service';
@@ -11,34 +11,46 @@ import { BlogsServiceService } from '../../services/blogsService/blogs-service.s
   styleUrl: './blog.component.css'
 })
 export class BlogComponent {
-
+  @Input() slug: string | null = null;
   blog: any;
   errorMessage: string = '';
+  @Output() returnToBlogs = new EventEmitter<void>();
 
   constructor(private blogService: BlogsServiceService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    const blogSlug: string | null = this.route.snapshot.paramMap.get('slug');
-    
-    if (blogSlug) {
-      this.blogService.getBlogBySlug(blogSlug).subscribe({
+    if (this.slug) {
+      this.blogService.getBlogBySlug(this.slug).subscribe({
         next: (data) => {
-          if (data.data && data.data.length > 0) {
-            this.blog = data.data[0];
-          } else {
-            this.errorMessage = "Blog not found.";
-          }
-          console.log("Blog Details:", this.blog);
+          this.blog = data.data?.[0]; 
         },
         error: (err) => {
-          console.error("Error fetching blog details", err);
-          this.errorMessage = "Oops, there was an error fetching the blog.";
+          console.error('Error fetching project', err);
         }
       });
-    } else {
-      this.errorMessage = "Oops, looks like there was an error getting this blog's information.";
     }
-}
+  }
+
+  backToBlogs(): void {
+    this.returnToBlogs.emit();
+  }
+
+
+  /**
+   *  This function takes in the date for a blog in the format that the cms
+   *  stores it as and then it will return the date as "Month Day, Year"
+   * 
+   * @param dateStr Date format from CMS
+   * @returns 
+   */
+  formatDate(dateStr: string): string {
+    const date = new Date(dateStr);
+    return date.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric"
+    });
+  }
 
 
 }

@@ -1,16 +1,18 @@
 <app-navbar (sectionChange)="onSectionChange($event)"></app-navbar>
-<div id="homeContainer">
-    <div id="homeLeft">
-        <app-sidebar></app-sidebar>
-    </div>
-    <div id="homeRight">
-        <app-intro *ngIf="activeSection === 'home'"></app-intro>
-        <app-featured-projects *ngIf="activeSection === 'home'"></app-featured-projects>
-        <app-featured-blogs *ngIf="activeSection === 'home'"></app-featured-blogs>
-        <app-experience *ngIf="activeSection === 'home'"></app-experience>
-        <app-education *ngIf="activeSection === 'home'"></app-education>
-        <app-contact *ngIf="activeSection === 'home' || activeSection === 'contact'"></app-contact>
-        <app-blogs *ngIf="activeSection === 'blogs'"></app-blogs>
-        <app-projects *ngIf="activeSection === 'projects'"></app-projects>
-    </div>
+
+<div id="mainBody">
+  <aside id="homeLeft">
+    <app-sidebar></app-sidebar>
+  </aside>
+
+  <section id="homeRight">
+    <app-intro *ngIf="activeSection === 'home'"></app-intro>
+    <app-experience *ngIf="activeSection === 'home'"></app-experience>
+    <app-education *ngIf="activeSection === 'home'"></app-education>
+    <app-contact *ngIf="activeSection === 'home' || activeSection === 'contact'"></app-contact>
+    <app-blogs *ngIf="activeSection === 'blogs'" (blogSelected)="showBlog($event)"></app-blogs>
+    <app-blog *ngIf="activeSection === 'blogDetail'" [slug]="selectedBlogSlug" (returnToBlogs)="goToBlogs()"></app-blog>
+    <app-projects *ngIf="activeSection === 'projects'" (projectSelected)="showProject($event)"></app-projects>
+    <app-project *ngIf="activeSection === 'projectDetail'" [slug]="selectedProjectSlug" (returnToProjects)="goToProjects()"></app-project>
+  </section>
 </div>

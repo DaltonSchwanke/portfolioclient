@@ -1,7 +1,14 @@
 <div class="projectContainer">
     <div class="linksContainer">
-        <a *ngIf="project?.github" [href]="project.github" target="_blank" class="projectGithub">GitHub</a>
-        <a *ngIf="project?.link" [href]="project.link" target="_blank" class="projectLink">Visit</a>
+        <button (click)="backToProjects()">
+            <img src="/backArrow.png" alt="back">
+        </button>
+        <a *ngIf="project?.github" [href]="project.github" target="_blank" class="projectGithub">
+            <img src="/github.png" alt="github">
+        </a>
+        <a *ngIf="project?.link" [href]="project.link" target="_blank" class="projectLink">
+            <img src="/goToArrow.png" alt="visit">
+        </a>
     </div>
     <div class="projectTitleContainer">
         <h1>{{ project?.title }}</h1>

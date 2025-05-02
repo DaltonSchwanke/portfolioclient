@@ -1,33 +1,40 @@
-#projectsPage {
-    margin: 0px;
-    min-height: 100vh;
-    padding: 2rem;
-}
-
-#projectCardsContainer {
+#projectsPage{
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    margin-top: 2rem;
 }
 
-.projectCard {
+#projectsPageHeaderContainer{
     width: 100%;
-    text-align: left;
-    padding: 1rem;
-    border: none;
-    background-color: rgba(255, 255, 255, 0.05);
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
-.projectCard:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-}
 
-.projectLinks {
+#projectCardsContainer{
     display: flex;
-    gap: 1rem;
-    margin-bottom: 1rem;
+    flex-direction: column;
 }
+
+.projectCard{
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+    border: none;
+    margin-bottom: 1rem;
+    transition: all 0.5s ease;
+    border-radius: 8px;
+    height: 200px;
+}
+
+.projectCard:hover{
+    background-color: rgba(256, 256, 256, 0.05);
+    transform: scale(1.05);
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+}
+
+.projectImage{
+    height: 100%;
+}
+
+
+

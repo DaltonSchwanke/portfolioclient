@@ -1,8 +1,16 @@
 <nav id="navbar">
   <div id="navbarLinksContainer">
-    <button (click)="goToSection('home')">Home</button>
-    <button (click)="goToSection('projects')">Projects</button>
-    <button (click)="goToSection('blogs')">Blogs</button>
-    <button (click)="goToSection('contact')">Contact</button>
+    <button id="homeBtn" (click)="setActive('home')">
+      <img src="/home.png" alt="home">
+    </button>
+    <button id="projectsBtn" (click)="setActive('projects')">
+      <img src="/projects.png" alt="projects">
+    </button>
+    <button id="blogsBtn" (click)="setActive('blogs')">
+      <img src="blog.png" alt="blogs">
+    </button>
+    <button id="contactBtn" (click)="setActive('contact')">
+      <img src="/email.png" alt="contact">
+    </button>
   </div>
 </nav>

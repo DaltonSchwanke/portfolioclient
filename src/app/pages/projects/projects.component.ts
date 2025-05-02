@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { ProjectsServiceService } from '../../services/projectsService/projects-service.service';
@@ -11,6 +11,7 @@ import { ProjectsServiceService } from '../../services/projectsService/projects-
   styleUrl: './projects.component.css'
 })
 export class ProjectsComponent {
+  @Output() projectSelected = new EventEmitter<any>();
   projects: any;
 
   constructor( private projectsService: ProjectsServiceService, private router: Router) {}
@@ -33,13 +34,23 @@ export class ProjectsComponent {
   }
 
 
+
+
   /**
    *  This function is used to route the user to the project page
    *  pertaining to the project slug that is passed as a parameter.
    * 
    * @param slug project slug id
    */
-  goToProject(slug: string): void{
-    this.router.navigate(['/project', slug]);
+  goToProject(slug: string): void {
+    this.projectSelected.emit(slug);
+  }
+
+
+  getProjectImage(project: any): string {
+    if(!project?.image?.url){
+      project.image.url = '/project.png';
+    }
+    return project?.image?.url
   }
 }

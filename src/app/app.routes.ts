@@ -7,9 +7,9 @@ import { ProjectComponent } from './pages/project/project.component';
 
 export const routes: Routes = [
     {path: '', component: HomeComponent},
-    {path: 'blogs', component: BlogsComponent},
-    {path: 'blog/:slug', component: BlogComponent},
-    {path: 'projects', component: ProjectsComponent},
-    {path: 'project/:slug', component: ProjectComponent},
+    //{path: 'blogs', component: BlogsComponent},
+    //{path: 'blog/:slug', component: BlogComponent},
+    //{path: 'projects', component: ProjectsComponent},
+    //{path: 'project/:slug', component: ProjectComponent},
     {path: '**', component: HomeComponent}
 ];

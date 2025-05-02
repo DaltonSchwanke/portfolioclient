@@ -34,4 +34,11 @@ export class SidebarComponent {
     }
   }
 
+  getUserImage(sidebarData: any): string {
+    if(!sidebarData?.data?.image?.url){
+      sidebarData.data.image.url = "/user.png";
+    }
+    return sidebarData?.data?.image?.url;
+  }
+
 }

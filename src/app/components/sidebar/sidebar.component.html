@@ -1,6 +1,6 @@
 <div id="sidebarContainer">
     <div id="sidebarImageContainer">
-        <img id="sidebarImage" [src]="sidebarData?.data?.image?.url" alt="image of me">
+        <img id="sidebarImage" [src]="sidebarData?.data?.image?.url ?? '/user.png'" alt="image of me">
     </div>
     <div id="sidebarNameContainer">
         <h1 class="outfit-header">{{ sidebarData?.data?.name}}</h1>
@@ -18,7 +18,7 @@
         </div>
         <div id="emailContainer">
             <a href="sidebarData?.data?.email" target="_blank">
-                <img class="icon" src="/envelope.png" alt="Email">
+                <img class="icon" src="/email.png" alt="Email">
             </a>
         </div>
         <div id="resumeContainer">

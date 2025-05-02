@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ProjectsServiceService } from '../../services/projectsService/projects-service.service';
@@ -11,26 +11,28 @@ import { ProjectsServiceService } from '../../services/projectsService/projects-
   styleUrl: './project.component.css'
 })
 export class ProjectComponent {
+  @Input() slug: string | null = null;
+  @Output() returnToProjects = new EventEmitter<void>();
+
   project: any;
   errorMessage: string = '';
 
   constructor(private projectsService: ProjectsServiceService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    const projectSlug: string | null = this.route.snapshot.paramMap.get('slug');
-    if (projectSlug) {
-      this.projectsService.getProjectBySlug(projectSlug).subscribe({
+    if (this.slug) {
+      this.projectsService.getProjectBySlug(this.slug).subscribe({
         next: (data) => {
-          this.project = data.data[0];
-          console.log("Project:", this.project);
+          this.project = data.data?.[0]; 
         },
         error: (err) => {
-          console.error("Error fetching project details", err);
+          console.error('Error fetching project', err);
         }
       });
-    } else {
-      this.errorMessage = "Oops looks like there was an error getting this project's information";
     }
   }
 
+  backToProjects(): void {
+    this.returnToProjects.emit();
+  }
 }

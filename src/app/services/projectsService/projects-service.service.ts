@@ -33,7 +33,7 @@ export class ProjectsServiceService {
    * @returns Projects Data 
    */
   getProjects(): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/projects`, { headers: this.getHeaders() });
+    return this.http.get<any>(`${this.apiUrl}/projects?populate=image`, { headers: this.getHeaders() });
   }
 
 
