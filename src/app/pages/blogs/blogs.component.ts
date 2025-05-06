@@ -60,4 +60,7 @@ export class BlogsComponent {
     this.blogSelected.emit(slug);
   }
 
+
+  
+
 }

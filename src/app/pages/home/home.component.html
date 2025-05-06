@@ -7,12 +7,12 @@
 
   <section id="homeRight">
     <app-intro *ngIf="activeSection === 'home'"></app-intro>
+    <app-projects *ngIf="activeSection === 'projects'" (projectSelected)="showProject($event)"></app-projects>
+    <app-blogs *ngIf="activeSection === 'blogs'" (blogSelected)="showBlog($event)"></app-blogs>
     <app-experience *ngIf="activeSection === 'home'"></app-experience>
     <app-education *ngIf="activeSection === 'home'"></app-education>
     <app-contact *ngIf="activeSection === 'home' || activeSection === 'contact'"></app-contact>
-    <app-blogs *ngIf="activeSection === 'blogs'" (blogSelected)="showBlog($event)"></app-blogs>
     <app-blog *ngIf="activeSection === 'blogDetail'" [slug]="selectedBlogSlug" (returnToBlogs)="goToBlogs()"></app-blog>
-    <app-projects *ngIf="activeSection === 'projects'" (projectSelected)="showProject($event)"></app-projects>
     <app-project *ngIf="activeSection === 'projectDetail'" [slug]="selectedProjectSlug" (returnToProjects)="goToProjects()"></app-project>
   </section>
 </div>

@@ -7,6 +7,29 @@
     width: 100%;
 }
 
+/* Component Header */
+h1{
+    font-size: 3rem;
+    color: white;
+}
+
+/* Project Title */
+h2{
+    font-size: 2rem;
+    margin: 0rem;
+    padding: 0rem;
+    margin-right: 1rem;
+    color: white;
+}
+
+/* Project Date */
+h3{
+    font-size: 1.2rem;
+    margin: 0rem;
+    padding: 0rem;
+    color: rgba(256, 256, 256, 0.75);
+}
+
 
 #projectCardsContainer{
     display: flex;

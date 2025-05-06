@@ -11,10 +11,7 @@
     <div *ngIf="blog?.image" class="blogImageContainer">
         <img class="blogImage" [src]="blog?.image?.url" [alt]="blog?.title + 'image'">
     </div>
-    <div class="blogTextContainer">
-        <p class="blogText">
-            {{ blog?.text }}
-        </p>
+    <div id="blogTextContainer">
     </div>
 
 </div>

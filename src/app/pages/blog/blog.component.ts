@@ -23,6 +23,7 @@ export class BlogComponent {
       this.blogService.getBlogBySlug(this.slug).subscribe({
         next: (data) => {
           this.blog = data.data?.[0]; 
+          this.formatMarkdownToHTML(this.blog?.text);
         },
         error: (err) => {
           console.error('Error fetching project', err);
@@ -50,6 +51,37 @@ export class BlogComponent {
       month: "long",
       day: "numeric"
     });
+  }
+
+  formatMarkdownToHTML(text: string) {
+    if(text == null){
+      return;
+    }
+    const lines = text.split('\n');
+    let html = '';
+  
+    lines.forEach(line => {
+      const trimmed = line.trim();
+  
+      if (trimmed.startsWith('###')) {
+        html += `<h3 style="color: rgba(256, 256, 256, 0.75); margin-bottom: 0rem;">${trimmed.slice(3).trim()}</h3>`;
+      } else if (trimmed.startsWith('##')) {
+        html += `<h2 style="color: rgba(256, 256, 256, 0.75); margin-bottom: 0rem;">${trimmed.slice(2).trim()}</h2>`;
+      } else if (trimmed.startsWith('#')) {
+        html += `<h1 style="color: rgba(256, 256, 256, 0.75); margin-bottom: 0rem;">${trimmed.slice(1).trim()}</h1>`;
+      } else if (trimmed) {
+        html += `<p style="color: white;">${trimmed}</p>\n`;
+      }
+      // skip empty lines without adding anything
+    });
+    console.log("HTML: ", html);
+
+    const contentDiv = document.getElementById('blogTextContainer');
+    if(contentDiv){
+      contentDiv.innerHTML = html;
+    } else {
+      console.log("This is not working");
+    }
   }
 
 
