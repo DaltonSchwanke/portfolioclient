@@ -1,1 +1,20 @@
-<p>blog works!</p>
+<div id="blogPage">
+    <div id="blogHeader">
+        <button (click)="backToBlogs()">
+            <img src="/backArrow.png" alt="back">
+        </button>
+        <div id="blogHeaderContainer">
+            <h1>{{ blog?.title }}</h1>
+            <h2>{{ formatDate(blog?.date) }}</h2>
+        </div>
+    </div>
+    <div *ngIf="blog?.image" class="blogImageContainer">
+        <img class="blogImage" [src]="blog?.image?.url" [alt]="blog?.title + 'image'">
+    </div>
+    <div class="blogTextContainer">
+        <p class="blogText">
+            {{ blog?.text }}
+        </p>
+    </div>
+
+</div>

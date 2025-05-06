@@ -1,0 +1,67 @@
+#contactSection{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 3px solid yellow;
+}
+
+#contactHeaderContainer{
+    width: 100%;
+}
+
+#contactForm{
+    width: 100%;
+    border: 3px solid red;
+}
+
+
+
+#emailTileContainer{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1rem;
+    border: 3px solid green;
+}
+
+#messageContainer{
+    margin-bottom: 1rem;
+    border: 3px solid blue;
+}
+
+.inputDiv{
+    width: 50%;
+    border: 3px solid pink;
+}
+
+#contactEmail{
+    border: 3px solid orange;
+}
+
+#contactMessage{
+    width: 100%;
+    max-width: 100% !important;
+    height: 160px;
+    max-height: 160px !important;
+    border-radius: 24px;
+}
+
+#buttonContainer{
+    width: 100%;
+}
+
+#submitBtn{
+    width: 100%;
+    height: 40px;
+    background-color: rgb(34, 76, 168);
+    border: none;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+#submitBtn:hover{
+    transform: scale(1.02);
+}
+
+
+
+

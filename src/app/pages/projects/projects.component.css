@@ -1,0 +1,40 @@
+#projectsPage{
+    display: flex;
+    flex-direction: column;
+}
+
+#projectsPageHeaderContainer{
+    width: 100%;
+}
+
+
+#projectCardsContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.projectCard{
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+    border: none;
+    margin-bottom: 1rem;
+    transition: all 0.5s ease;
+    border-radius: 8px;
+    height: 200px;
+}
+
+.projectCard:hover{
+    background-color: rgba(256, 256, 256, 0.05);
+    transform: scale(1.05);
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+}
+
+.projectImage{
+    height: 100%;
+}
+
+
+

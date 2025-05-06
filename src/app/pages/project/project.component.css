@@ -1,0 +1,19 @@
+#projectContainer{
+    background-color: red;
+}
+
+button{
+    background-color: transparent;
+    z-index: 1000;
+    border: none;
+}
+
+button img {
+    transition: transform 0.3s ease;
+    width: 32px;
+    height: 32px;
+}
+
+button:hover img {
+    transform: scale(1.25);
+}

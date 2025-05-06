@@ -1,1 +1,21 @@
-<p>education works!</p>
+<div id="educationContainer">
+    <div id="educationHeaderContainer">
+        <h1>Education</h1>
+    </div>
+    <div id="educationCardContainer">
+        <div *ngFor="let edu of educationData?.data" class="educationCard">
+            <!-- Button in the top-right corner -->
+            <a class="eduButton" [href]="edu.link" target="_blank">View</a>
+
+            <div class="educationSchoolDegree">
+                <h2>{{ edu.school }} - {{ edu.degree }}</h2>
+            </div>
+            <div class="eduDates">
+                <h4>{{ edu.startDate }} - {{ edu.endDate }}</h4>
+            </div>
+            <div class="eduDescription">
+                <p>{{ edu.description }}</p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,1 +1,18 @@
-<p>featured-blogs works!</p>
+<div id="featuredBlogsContainer">
+    <div id="blogsHeaderContainer">
+        <h1>Blogs</h1>
+    </div>
+    <div id="blogsCardContainer">
+        <button *ngFor="let blog of blogs" class="blogCard" (click)="goToBlog(blog?.slug)">
+            <div class="blogTitleContainer">
+                <h2>{{ blog.title }}</h2>
+            </div>
+            <div class="blogDateContainer">
+                <h3>{{ blog.date }}</h3>
+            </div>
+            <div class="blogSummaryContainer">
+                <p>{{ blog.summary }}</p>
+            </div>
+        </button>
+    </div>
+</div>
