@@ -70,7 +70,7 @@ export class BlogComponent {
       } else if (trimmed.startsWith('#')) {
         html += `<h1 style="color: rgba(256, 256, 256, 0.75); margin-bottom: 0rem;">${trimmed.slice(1).trim()}</h1>`;
       } else if (trimmed) {
-        html += `<p style="color: white;">${trimmed}</p>\n`;
+        html += `<p style="color: white;" class="roboto-text">${trimmed}</p>\n`;
       }
       // skip empty lines without adding anything
     });

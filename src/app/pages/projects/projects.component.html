@@ -4,7 +4,7 @@
     </div>
     <div id="projectCardsContainer">
         <button *ngFor="let project of projects?.data" class="projectCard" (click)="goToProject(project.slug)">
-            <img class="projectImage" [src]="project?.image?.url ?? '/projectCard.png'" alt="{{ project.title }} image" />
+            <img class="projectImage" [src]="project?.image?.url ?? '/projectImage.jpg'" alt="{{ project.title }} image" />
             
             <div class="projectContent">
               <div class="projectTitleContainer">

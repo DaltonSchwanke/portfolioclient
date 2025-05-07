@@ -1,0 +1,95 @@
+/* Header Font Format */
+.cal-sans-regular {
+    font-family: "Cal Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Paragraph Font Format */
+.roboto-text {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+/* Education Header */
+h1{
+    text-transform: uppercase;
+    color: white;
+    font-size: 6rem;
+    margin: 0rem;
+    padding-bottom: 0rem;
+}
+
+/* Education Title */
+h2{
+    text-transform: uppercase;
+    color: rgba(256, 256, 256, 0.75);
+    font-size: 2rem;
+    margin: 0rem;
+    padding-bottom: 0rem;
+}
+
+/* Education Dates */
+h4{
+    text-transform: uppercase;
+    color: rgba(256, 256, 256, 0.75);
+    font-size: 1.2rem;
+    margin: 0rem;
+    padding-bottom: 0rem;
+}
+
+/* Education Description */
+p{
+    color: rgba(256, 256, 256, 0.85);
+    font-size: 1rem;
+    margin: 1rem 0rem; 
+    padding-bottom: 0rem;
+}
+
+/* Education Content Container */
+#educationContainer{
+    padding-bottom: 4rem;
+}
+
+/* Education Card Container */
+.educationCard{
+    padding: 1rem;
+    transition: transform 0.5s ease;
+    margin-bottom: 1rem;
+}
+
+/* Education Card Container Hover Effect */
+.educationCard:hover{
+    background-color: rgba(256, 256, 256, 0.05);
+    border-radius: 16px;
+    transform: scale(1.02);
+}
+
+/* Education Title Container */
+.educationTitleContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Education Description Container */
+.eduDescription{
+    overflow: hidden;
+    max-height: 68px;
+}
+
+/* Visit Education Image */
+img{
+    height: 50px;
+    aspect-ratio: 1 / 1;
+    transition: transform 0.5s ease;
+}
+
+/* Education Card Container Hover Visit Education Image Effect  */
+.educationCard:hover img{
+    transform: scale(1.02);
+}

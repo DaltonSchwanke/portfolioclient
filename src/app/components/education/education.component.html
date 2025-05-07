@@ -1,20 +1,22 @@
 <div id="educationContainer">
     <div id="educationHeaderContainer">
-        <h1>Education</h1>
+        <h1 class="cal-sans-regular">Education</h1>
     </div>
     <div id="educationCardContainer">
         <div *ngFor="let edu of educationData?.data" class="educationCard">
-            <!-- Button in the top-right corner -->
-            <a class="eduButton" [href]="edu.link" target="_blank">View</a>
-
-            <div class="educationSchoolDegree">
-                <h2>{{ edu.school }} - {{ edu.degree }}</h2>
+            <div class="educationTitleContainer">
+                <div class="educationSchoolDegree">
+                    <h2 class="cal-sans-regular">{{ edu.school }} - {{ edu.degree }}</h2>
+                </div>
+                <a class="eduButton" [href]="edu.link" target="_blank">
+                    <img src="/visitArrow.png" alt="Visit">
+                </a>
             </div>
             <div class="eduDates">
-                <h4>{{ edu.startDate }} - {{ edu.endDate }}</h4>
+                <h4 class="cal-sans-regular">{{ edu.startDate }} - {{ edu.endDate }}</h4>
             </div>
             <div class="eduDescription">
-                <p>{{ edu.description }}</p>
+                <p class="roboto-text">{{ edu.description }}</p>
             </div>
         </div>
     </div>
