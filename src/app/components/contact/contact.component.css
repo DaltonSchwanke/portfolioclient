@@ -1,63 +1,142 @@
+/* Header Font Format */
+.cal-sans-regular {
+    font-family: "Cal Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Paragraph Font Format */
+.roboto-text {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+/* Experience Header */
+h1{
+    text-transform: uppercase;
+    color: white;
+    font-size: 6rem;
+    margin: 0rem;
+    line-height: 100%;
+    padding-bottom: 0rem;
+}
+
+/* Experience Title */
+h2{
+    text-transform: uppercase;
+    color: rgba(256, 256, 256, 0.75);
+    font-size: 2rem;
+    margin: 0rem;
+    padding-bottom: 0rem;
+}
+
+/* Experience Dates */
+h4{
+    text-transform: uppercase;
+    color: rgba(256, 256, 256, 0.75);
+    font-size: 1.2rem;
+    margin: 0rem 1rem;
+    padding-bottom: 0rem;
+}
+
+/* Experience Description */
+p{
+    color: rgba(256, 256, 256, 0.85);
+    font-size: 1rem; 
+    padding-bottom: 0rem;
+}
+
+/* Contact Content Container */
 #contactSection{
     width: 100%;
     display: flex;
     flex-direction: column;
-    border: 3px solid yellow;
 }
 
+/* Contact Header Container */
 #contactHeaderContainer{
     width: 100%;
 }
 
+/* Contact Form */
 #contactForm{
     width: 100%;
-    border: 3px solid red;
+    margin-top: 2rem;
 }
 
-
-
+/* Email and Title Container */
 #emailTileContainer{
     display: flex;
     flex-direction: row;
-    margin-bottom: 1rem;
-    border: 3px solid green;
 }
 
-#messageContainer{
-    margin-bottom: 1rem;
-    border: 3px solid blue;
-}
-
+/* Email and Title Container */
 .inputDiv{
     width: 50%;
-    border: 3px solid pink;
+    padding: 0rem 1rem 0rem 1rem;
 }
 
+/* Email Input Container */
 #contactEmail{
-    border: 3px solid orange;
+    width: 100%;
 }
 
+/* Title Input Container */
+#contactTitle{
+    width: 100%;
+}
+
+/* Message Container */
+#messageContainer{
+    padding: 0rem 1rem 2rem 1rem;
+}
+
+/* Message Input */
 #contactMessage{
     width: 100%;
     max-width: 100% !important;
     height: 160px;
     max-height: 160px !important;
-    border-radius: 24px;
 }
 
+label{
+    color: rgba(256, 256, 256, 0.85);
+}
+
+textarea{
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    color: rgba(256, 256, 256, 0.85);
+    border-radius: 8px;
+    border-top-left-radius: 0px;
+    background-color: rgba(256, 256, 256, 0.05);
+    border: none;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+    font-size: 1rem;
+    padding: 0.5rem;
+}
+
+/* Submit Button Container */
 #buttonContainer{
     width: 100%;
 }
 
+/* Submit Button */
 #submitBtn{
     width: 100%;
     height: 40px;
     background-color: rgb(34, 76, 168);
     border: none;
+    font-size: 1rem;
+    color: white;
     border-radius: 12px;
     transition: transform 0.3s ease;
 }
 
+/* Submit Button Hover Effect */
 #submitBtn:hover{
     transform: scale(1.02);
 }

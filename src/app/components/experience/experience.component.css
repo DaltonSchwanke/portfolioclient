@@ -14,10 +14,7 @@
     font-variation-settings: "wdth" 100;
 }
 
-#experienceContainer{
-    padding-bottom: 4rem;
-}
-
+/* Experience Header */
 h1{
     text-transform: uppercase;
     color: white;
@@ -26,6 +23,7 @@ h1{
     padding-bottom: 0rem;
 }
 
+/* Experience Title */
 h2{
     text-transform: uppercase;
     color: rgba(256, 256, 256, 0.75);
@@ -34,6 +32,7 @@ h2{
     padding-bottom: 0rem;
 }
 
+/* Experience Dates */
 h4{
     text-transform: uppercase;
     color: rgba(256, 256, 256, 0.75);
@@ -42,6 +41,7 @@ h4{
     padding-bottom: 0rem;
 }
 
+/* Experience Description */
 p{
     color: rgba(256, 256, 256, 0.85);
     font-size: 1rem;
@@ -49,12 +49,19 @@ p{
     padding-bottom: 0rem;
 }
 
+/* Experience Content Container */
+#experienceContainer{
+    padding-bottom: 4rem;
+}
+
+/* Experience Card Container */
 .experienceCard{
     padding: 1rem;
     transition: transform 0.5s ease;
     margin-bottom: 1rem;
 }
 
+/* Expeirence Card Container Hover Effect */
 .experienceCard:hover{
     background-color: rgba(256, 256, 256, 0.05);
     border-radius: 16px;
@@ -62,7 +69,7 @@ p{
 }
 
 
-
+/* Experience Title Container */
 .experienceTitleContainer{
     display: flex;
     flex-direction: row;
@@ -70,17 +77,22 @@ p{
     align-items: center;
 }
 
+/* Experience Description Container */
 .expDescription{
     overflow: hidden;
     max-height: 68px;
 }
 
+/* Visit Experience Image */
 img{
     height: 50px;
     aspect-ratio: 1 / 1;
     transition: transform 0.5s ease;
 }
 
+/* Experience Card Container Hover Visit Experience Image Effect */
 .experienceCard:hover img{
     transform: scale(1.02);
 }
+
+/**/
