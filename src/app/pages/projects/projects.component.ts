@@ -25,6 +25,11 @@ export class ProjectsComponent {
     this.projectsService.getProjects().subscribe({
       next: (data) => {
         this.projects = data;
+        if(this.projects?.data){
+          this.projects.data.sort((a: any, b: any) => {
+            return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
+          })
+        }
         console.log("Projects:", this.projects) ;
       },
       error: (err) => {
@@ -48,9 +53,10 @@ export class ProjectsComponent {
 
 
   getProjectImage(project: any): string {
-    if(!project?.image?.url){
-      project.image.url = '/project.png';
+    if(project?.image == null){
+      return '/projectImage.jpg';
+    } else {
+      return project?.image[0]?.url;
     }
-    return project?.image?.url
   }
 }

@@ -7,6 +7,8 @@
 
   <section id="homeRight">
     <app-intro *ngIf="activeSection === 'home'"></app-intro>
+    <app-featured-projects *ngIf="activeSection === 'home'"></app-featured-projects>
+    <app-featured-blogs *ngIf="activeSection === 'home'"></app-featured-blogs>
     <app-projects *ngIf="activeSection === 'projects'" (projectSelected)="showProject($event)"></app-projects>
     <app-blogs *ngIf="activeSection === 'blogs'" (blogSelected)="showBlog($event)"></app-blogs>
     <app-experience *ngIf="activeSection === 'home'"></app-experience>

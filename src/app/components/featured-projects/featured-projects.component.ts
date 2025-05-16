@@ -18,12 +18,18 @@ export class FeaturedProjectsComponent {
   ngOnInit(): void {
     this.projectsService.getProjects().subscribe({
       next: (data) => {
-        if(data.data.length > 3){
-          this.projects = data.data.slice(0,3);
+        this.projects = data;
+        if(this.projects?.data){
+          this.projects.data.sort((a: any, b: any) => {
+            return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
+          })
         }
-        else{
-          this.projects = data.data;
+        if(this.projects.data.length > 3){
+          this.projects.data = this.projects.data.slice(0,3);
+        } else{
+          this.projects.data = this.projects.data;
         }
+        console.log("Featured Projects: ", this.projects);
       },
       error: (err) => {
         console.error("Error fetching projects data", err);
@@ -52,6 +58,19 @@ export class FeaturedProjectsComponent {
    */
   goToProjects(): void {
     this.router.navigate(['/projects']);
+  }
+
+  /**
+   * Returns the first image URL of the project if available, otherwise returns a fallback path.
+   * @param project project object
+   * @returns image URL string
+   */
+  getProjectImage(project: any): string {
+    if(project?.image == null){
+      return '/projectImage.jpg';
+    } else {
+      return project?.image[0]?.url;
+    }
   }
 
 }

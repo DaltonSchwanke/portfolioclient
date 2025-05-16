@@ -18,12 +18,18 @@ export class BlogsComponent {
 
   /**
    *  This function is ran when the blogs component loads and will get blog
-   *  data and when the data is returned it will set it to the variable 'blogs'.
+   *  data and when the data is returned it will set it to the variable 'blogs' and then 
+   *  sort the blogs from latest to earliest. 
    */
   ngOnInit(): void {
     this.blogsService.getBlogs().subscribe({
       next: (data) => {
         this.blogs = data;
+        if (this.blogs?.data) {
+          this.blogs.data.sort((a: any, b: any) => {
+            return new Date(b.date).getTime() - new Date(a.date).getTime();
+          });
+        }
         console.log("Blogs:", this.blogs);
 
       },

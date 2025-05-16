@@ -64,11 +64,11 @@ export class BlogComponent {
       const trimmed = line.trim();
   
       if (trimmed.startsWith('###')) {
-        html += `<h3 style="color: rgba(256, 256, 256, 0.75); margin-bottom: 0rem;">${trimmed.slice(3).trim()}</h3>`;
+        html += `<h3 class="cal-sans-regular" style="color: rgba(256, 256, 256, 0.75); margin-bottom: 0rem;">${trimmed.slice(3).trim()}</h3>`;
       } else if (trimmed.startsWith('##')) {
-        html += `<h2 style="color: rgba(256, 256, 256, 0.75); margin-bottom: 0rem;">${trimmed.slice(2).trim()}</h2>`;
+        html += `<h2 class="cal-sans-regular" style="color: rgba(256, 256, 256, 0.75); margin-bottom: 0rem;">${trimmed.slice(2).trim()}</h2>`;
       } else if (trimmed.startsWith('#')) {
-        html += `<h1 style="color: rgba(256, 256, 256, 0.75); margin-bottom: 0rem;">${trimmed.slice(1).trim()}</h1>`;
+        html += `<h2  class="cal-sans-regular"style="color: rgba(256, 256, 256, 0.75); margin-bottom: 0rem;">${trimmed.slice(1).trim()}</h2>`;
       } else if (trimmed) {
         html += `<p style="color: white;" class="roboto-text">${trimmed}</p>\n`;
       }

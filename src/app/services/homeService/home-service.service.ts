@@ -36,6 +36,10 @@ export class HomeServiceService {
     return this.http.get<any>(`${this.apiUrl}/sidebar?populate=resume`, { headers: this.getHeaders() });
   }
 
+  getSidebarImage(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/sidebar?populate=image`, { headers: this.getHeaders() });
+  }
+
 
   /**
    *  This function is used to send a request to get the intro data

@@ -56,6 +56,7 @@ p{
 #projectCardsContainer{
     display: flex;
     flex-direction: column;
+    margin-top: 1rem;
 }
 
 /* Project Card */
@@ -90,13 +91,15 @@ p{
 }
 
 .projectContent{
-    border: 3px solid green;
     width: auto;
+    text-align: left;
+    padding-left: 1rem;
 }
 
 .project{
     width: 100%;
-    border: 3px solid yellow;
+    max-height: 120px;
+    overflow: hidden;
     text-align: left;
 }
 
@@ -109,4 +112,9 @@ p{
     gap: 0.5rem;
     z-index: 10;
     background: none;
+}
+
+.linkImg{
+    width: 50px;
+    aspect-ratio: 1 / 1;
 }

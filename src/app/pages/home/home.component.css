@@ -61,9 +61,14 @@ body, html {
     }
   
     #homeLeft {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       width: 100% !important;
-      margin: 0rem;
-      padding: 0rem;
+      height: fit-content;
+      margin: 0 auto;
+      padding: 0rem !important;
       position: relative;
       top: 0;
       border: 3px solid yellow;
@@ -74,3 +79,18 @@ body, html {
       border: 3px solid red;
     }
   }
+
+
+    /*#homeLeft {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: fit-content;
+      margin: 0 auto;
+      padding: 0rem;
+      position: relative;
+      top: 0;
+      border: 3px solid yellow;
+    }*/

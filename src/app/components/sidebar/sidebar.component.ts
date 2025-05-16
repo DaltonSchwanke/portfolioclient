@@ -10,6 +10,7 @@ import { HomeServiceService } from '../../services/homeService/home-service.serv
 })
 export class SidebarComponent {
   sidebarData: any;
+  sidebarImage: any;
 
   constructor( private homeService: HomeServiceService) {}
 
@@ -21,6 +22,15 @@ export class SidebarComponent {
       },
       error: (err) => {
         console.error("Error fetching sidebar data", err);
+      }
+    })
+    this.homeService.getSidebarImage().subscribe({
+      next: (data) => {
+        this.sidebarImage = data?.data?.image;
+        console.log("Sidebar Image: ", this.sidebarImage);
+      },
+      error: (err) => {
+        console.error("Error fetching sidebar Image", err);
       }
     })
   }

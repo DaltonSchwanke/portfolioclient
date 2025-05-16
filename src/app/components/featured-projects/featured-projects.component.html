@@ -1,22 +1,26 @@
-<div id="projectsContainer">
-    <div id="projectsHeaderContainer">
-        <h1>Projects</h1>
+<div id="projectsPage">
+    <div id="projectsPageHeaderContainer">
+        <h1 class="cal-sans-regular">Recent Projects</h1>
     </div>
-    <div id="projectsCardContainer">
-        <button *ngFor="let project of projects" class="projectCard" (click)="goToProject(project?.slug)">
-            <div class="projectLinks">
-                <a *ngIf="project.github" href="project.github" class="projectGithub">github</a>
-                <a *ngIf="project.link" href="project.link" class="projectLink">Visit</a>
+    <div id="projectCardsContainer">
+        <button *ngFor="let project of projects?.data" class="projectCard" (click)="goToProject(project.slug)">
+            <img class="projectImage" [src]="getProjectImage(project)" alt="{{ project.title }} image" />
+            <div class="projectContent">
+              <div class="projectTitleContainer">
+                <h2 class="cal-sans-regular">{{ project.title }}</h2>
+                <div class="projectLinks">
+                  <a *ngIf="project.github" [href]="project.github" target="_blank" class="projectGithub" (click)="$event.stopPropagation()">
+                    <img class="linkImg" src="/github.png" alt="github">
+                  </a>
+                  <a *ngIf="project.link" [href]="project.link" target="_blank" class="projectLink" (click)="$event.stopPropagation()">
+                    <img class="linkImg" src="/visitArrow.png" alt="visit">
+                  </a>
+                </div>
+              </div>
+              <div class="project">
+                <p class="roboto-text">{{ project.description }}</p>
+              </div>
             </div>
-            <div class="projectTitleContainer">
-                <h2>{{ project.title }}</h2>
-            </div>
-            <div class="project">
-                <p>{{ project.description }}</p>
-            </div>
-        </button>
-    </div>
-    <div id="projectsBtnContainer">
-        <button (click)="goToProjects()">more</button>
+          </button>
     </div>
 </div>

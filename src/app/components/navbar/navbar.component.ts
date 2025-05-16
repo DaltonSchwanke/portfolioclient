@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -10,19 +10,14 @@ import { CommonModule } from '@angular/common';
 })
 export class NavbarComponent {
   @Output() sectionChange = new EventEmitter<string>();
-
-  ngOnInit(): void {
-    const homeBtn = document.getElementById('homeBtn');
-  }
-
+  @Input() activeSection: string = 'home';
 
   setActive(section: string): void {
-    // Reset all buttons
-  
-    this.goToSection(section);
+    this.activeSection = section;
+    this.sectionChange.emit(section);
   }
 
-  goToSection(section: string): void {
-    this.sectionChange.emit(section);
+  isActive(section: string): boolean {
+    return this.activeSection === section;
   }
 }

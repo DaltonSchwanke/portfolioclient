@@ -23,17 +23,36 @@ export class FeaturedBlogsComponent {
   ngOnInit(): void {
     this.blogsService.getBlogs().subscribe({
       next: (data) => {
-        if(data.data.length > 3){
-          this.blogs = data.data.slice(0, 3);
+        this.blogs = data;
+        if (this.blogs?.data) {
+          this.blogs.data.sort((a: any, b: any) => {
+            return new Date(b.date).getTime() - new Date(a.date).getTime();
+          });
         }
-        else{
-          this.blogs = data.data;
-        }
+        this.blogs.data = this.blogs.data.splice(0,3);
+        console.log("Blogs:", this.blogs);
+
       },
       error: (err) => {
-        console.log("Error fetching featured blogs", err);
+        console.error("Error fetching blogs", err);
       }
-    });
+    })
+  }
+
+/**
+   *  This function takes in the date for a blog in the format that the cms
+   *  stores it as and then it will return the date as "Month Day, Year"
+   * 
+   * @param dateStr Date format from CMS
+   * @returns 
+   */
+formatDate(dateStr: string): string {
+  const date = new Date(dateStr);
+  return date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+  });
 }
 
 

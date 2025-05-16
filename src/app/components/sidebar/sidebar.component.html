@@ -1,9 +1,9 @@
 <div id="sidebarContainer">
     <div id="sidebarImageContainer">
-        <img id="sidebarImage" [src]="sidebarData?.data?.image?.url ?? '/user.png'" alt="image of me">
+        <img id="sidebarImage" [src]="sidebarImage.url ?? '/user.png'" alt="image of me">
     </div>
     <div id="sidebarNameContainer">
-        <h1 class="outfit-header">{{ sidebarData?.data?.name}}</h1>
+        <h2 class="outfit-header cal-sans-regular">{{ sidebarData?.data?.name}}</h2>
     </div>
     <div id="sidebarLinksContainer">
         <div id="linkedInContainer">

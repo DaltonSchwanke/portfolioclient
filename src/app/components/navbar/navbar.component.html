@@ -1,15 +1,15 @@
 <nav id="navbar">
   <div id="navbarLinksContainer">
-    <button id="homeBtn" (click)="setActive('home')">
+    <button id="homeBtn" [ngClass]="{ 'active': activeSection === 'home' }" (click)="setActive('home')">
       <img src="/home.png" alt="home">
     </button>
-    <button id="projectsBtn" (click)="setActive('projects')">
+    <button id="projectsBtn" [ngClass]="{ 'active': activeSection === 'projects' }" (click)="setActive('projects')">
       <img src="/projects.png" alt="projects">
     </button>
-    <button id="blogsBtn" (click)="setActive('blogs')">
+    <button id="blogsBtn" [ngClass]="{ 'active': activeSection === 'blogs' }" (click)="setActive('blogs')">
       <img src="blog.png" alt="blogs">
     </button>
-    <button id="contactBtn" (click)="setActive('contact')">
+    <button id="contactBtn" [ngClass]="{ 'active': activeSection === 'contact' }" (click)="setActive('contact')">
       <img src="/email2.png" alt="contact">
     </button>
   </div>
